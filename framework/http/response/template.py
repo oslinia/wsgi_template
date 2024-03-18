@@ -52,22 +52,6 @@ def context_replace(context: dict[str, str] | None, body: str):
     return body.rstrip()
 
 
-def endings_list(end_blocks: list[str], line: str):
-    endings = list()
-
-    for end_block in end_blocks:
-        part, line = re.split(end_block, line, 1)
-
-        if end_block.startswith('{%-'):
-            part = part.rstrip()
-
-        endings.append(part)
-
-    endings.append(line)
-
-    return endings
-
-
 class Frame(object):
     __slots__ = ('templates', 'block', 'body')
 
@@ -148,7 +132,19 @@ class Frame(object):
                 key = name not in self.block.keys()
 
                 if ' endblock %}' in line and (end_blocks := re.findall(r'({%-* endblock %})', line)):
-                    body, depth, key = self.end_block(name, endings_list(end_blocks, line), depth, key, body)
+                    endings = list()
+
+                    for end_block in end_blocks:
+                        part, line = re.split(end_block, line, 1)
+
+                        if end_block.startswith('{%-'):
+                            part = part.rstrip()
+
+                        endings.append(part)
+
+                    endings.append(line)
+
+                    body, depth, key = self.end_block(name, endings, depth, key, body)
 
                 else:
                     depth.append(name)
