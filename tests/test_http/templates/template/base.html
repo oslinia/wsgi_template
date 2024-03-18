@@ -1,0 +1,11 @@
+{% extends "template/index.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_file('style.css') }}">
+{%- endblock %}
+{% block content %}
+    <h3>{% block name %}{% endblock %}</h3>
+{% endblock %}
+{% block footer -%}
+    <p>&copy; Copyright {{ year }} by <a href="http://domain.invalid/">you</a>.</p>
+{%- endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_file('style.css') }}">
+</head>
+<body>
+<table class="index">
+    <tr>
+        <td>file</td>
+        <td class="sep">:</td>
+        <td><a href="{{ url_file('style.css') }}" target="_blank">{{ file }}</a></td>
+    </tr>
+    <tr>
+        <td>header</td>
+        <td class="sep">:</td>
+        <td><a href="{{ url_for('header', header='one') }}" target="_blank">{{ header }}</a></td>
+    </tr>
+    <tr>
+        <td>cookie</td>
+        <td class="sep">:</td>
+        <td><a href="{{ url_for('cookie', cookie='test') }}" target="_blank">{{ cookie }}</a></td>
+    </tr>
+    <tr>
+        <td>redirect</td>
+        <td class="sep">:</td>
+        <td>{{ redirect }}</td>
+    </tr>
+    <tr>
+        <td>template</td>
+        <td class="sep">:</td>
+        <td><a href="{{ url_for('template', filename='block.html') }}" target="_blank">{{ template }}</a></td>
+    </tr>
+    <tr>
+        <td>multipart</td>
+        <td class="sep">:</td>
+        <td><a href="{{ url_for('template', filename='multipart.html') }}" target="_blank">{{ multipart }}</a></td>
+    </tr>
+</table>
+</body>
+</html>

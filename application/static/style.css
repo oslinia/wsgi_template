@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#content {
+    padding: 16px;
+}
+#content h3 {
+    padding-bottom: 10px;
+}
+#footer {
+    padding: 0 16px 16px 16px;
+}
+.index {
+    padding: 16px;
+}
+.index .sep {
+    padding: 0 4px;
+}
+.multipart {
+    display: block;
+    width: 630px;
+    margin: 0 auto;
+}
+.multipart p {
+    padding: 0 0 12px 0;
+}
+.multipart textarea {
+    width: 600px;
+    height: 300px;
+}
+.multipart button {
+    padding: 4px 8px;
+    cursor: pointer;
+}

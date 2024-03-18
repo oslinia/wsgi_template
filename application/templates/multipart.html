@@ -1,0 +1,17 @@
+{% extends "template/base.html" %}
+{% block title %}Multipart page{% endblock %}
+{% block content %}
+    <form class="multipart" enctype="multipart/form-data" method="post">
+        <p>Upload your photos to the server:</p>
+        <p><input type="file" name="photo" multiple accept="image/*,image/jpeg"></p>
+        <p>
+            <label for="description">Description:</label>
+            <input id="description" type="text" name="description" value="{{ form('description') }}">
+        </p>
+        <p>
+            <label for="text">Text:</label>
+            <textarea id="text" name="text">{{ form('text') }}</textarea>
+        </p>
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}

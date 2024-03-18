@@ -1,0 +1,12 @@
+{% extends "template/base.html" %}
+{% block head %}{{ super() }}
+    <style>
+        .important {
+            color: #336699;
+        }
+    </style>
+{%- endblock %}
+{% block content %}{{ super() }}
+    <p class="important">Welcome {{ name }}! Block page.</p>
+{% endblock %}
+{% block name %}Block{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_file('style.css') }}">
+</head>
+<body>
+<ul>
+    <li><a href="{{ url_for('index') }}">Homepage</a></li>
+    <li><a href="{{ url_for('template', filename='template.html') }}">Template</a></li>
+</ul>
+</body>
+</html>
